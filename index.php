@@ -1,6 +1,10 @@
 <?php
 
-include("Config/conexao_bd.php");
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+//Incluindo o arquivo de conexao com o banco de dados
+require_once("config/conexaobd.php");
 
 ?>
 
@@ -8,7 +12,7 @@ include("Config/conexao_bd.php");
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Projeto 2019</title>
+		<title>Projeto Academia</title>
 		<meta charset="utf-8">
 
 		<link rel="stylesheet" href="./css/bootstrap_css/bootstrap.min.css">
@@ -26,17 +30,18 @@ include("Config/conexao_bd.php");
 
 		<div class="container" id="cabecalho">
 			
-			<div class="jumbotron">
-						
-				<h1>Bem-vindo(a) ao meu site!</h1>
+			<div class="imagemlogo">
+				<img src="img/logo3.png">
+			</div>
 
-				<p>Olá Fulano!</p>
+			<div class="jumbotron" id="botoesnav">
+						
 
 				<ul class="menu">
-					<li><a class="btn btn-primary" role="button" href="?pg=inicio">Início</a></li>
-					<li><a class="btn btn-primary" role="button" href="?pg=sobre">Sobre</a></li>
 					<li><a class="btn btn-primary" role="button" href="?pg=cadastro">Cadastro</a></li>
-					<li><a class="btn btn-primary" role="button" href="?pg=listagem">Listagem</a></li>
+					<li><a class="btn btn-primary" role="button" href="?pg=listagem">Lista de Alunos</a></li>
+					<li><a class="btn btn-primary" role="button" href="?pg=relatorio">Relatório</a></li>
+					
 				</ul>
 
 			</div>
@@ -45,12 +50,6 @@ include("Config/conexao_bd.php");
 
 		<div class="container" id="corpo">
 
-			<nav aria-label="breadcrumb">
-			  <ol class="breadcrumb">
-			    <li class="breadcrumb-item" aria-current="page"><a href="?pg=inicio">Home</a></li>
-			    <li class="breadcrumb-item active" aria-current="page">Cadastro</li>
-			  </ol>
-			</nav>
 
 			<?php
 
@@ -58,7 +57,7 @@ include("Config/conexao_bd.php");
 					$pagina = $_GET["pg"];
 				}
 				else{
-					$pagina = "inicio";
+					$pagina = "cadastro";
 				}				
 
 				include("paginas/".$pagina.".php");

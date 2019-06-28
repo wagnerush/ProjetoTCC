@@ -4,6 +4,7 @@
 
 table td, th{
 	border: 1px solid;
+	text-align: center;
 }
 
 .menu{
@@ -19,4 +20,31 @@ table td, th{
 #rodape{
 	margin-top: 50px;
 	text-align: center;	
+}
+
+.imagemlogo{
+ /*	width: 461px;
+ 	height: 461px;*/
+ 	margin: 0 auto;
+ 	/*border: 1px solid;*/
+ 	text-align: center;
+}
+
+.imagemlogo img{
+ 	width: 461px;
+ 	height: 260px;
+}
+
+.jumbotron{
+	background-color: #fab740;
+
+}
+
+#botoesnav{
+	padding:50px;
+}
+
+#corpo table{
+	margin: 0 auto;
+
 }
